@@ -7,7 +7,7 @@ date_default_timezone_set('America/Sao_Paulo');
 // https://www.youtube.com/watch?v=zz3wDgQVo90
 require __DIR__ . "/vendor/autoload.php";
 
-$upload = new CoffeeCode\Uploader\Image("uploads", "images/", false); // false para não criar pastas automáticas de ano e mês
+$upload = new CoffeeCode\Uploader\Image("uploads", "images", false); // false para não criar pastas automáticas de ano e mês
 
 $files = $_FILES;
 
@@ -70,7 +70,6 @@ if (!empty($files['images'])) {
             <div class="mb-3">
                 <label class="form-label fs-1">Single Image</label>
                 <input type="file" name="image" accept="image/png, image/jpg, image/jpeg" class="form-control">
-                <!-- <input type="file" name="frm_file[]" multiple="multiple" min="1" max="100" class="form-control"> -->
             </div>
             <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
         </form>
@@ -83,7 +82,6 @@ if (!empty($files['images'])) {
             <div class="mb-3">
                 <label class="form-label fs-1">Multiple Images</label>
                 <input type="file" name="images[]" multiple min="1" max="100" accept="image/png, image/jpg, image/jpeg" class="form-control">
-                <!-- <input type="file" name="frm_file[]" multiple="multiple" min="1" max="100" class="form-control"> -->
             </div>
             <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
         </form>
